@@ -30,6 +30,11 @@ namespace GarageSimulation
         {
             return this._Vechile == null;
         }
+
+        public bool IsOccupiedWith(Vechile vechile)
+        {
+            return vechile == _Vechile;
+        }
         #endregion
     }
 }

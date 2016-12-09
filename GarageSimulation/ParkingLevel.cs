@@ -45,6 +45,17 @@ namespace GarageSimulation
         {
             return slots.First(s => s.IsSlotFree());
         }
+
+        public bool HasVechile(Vechile vechile)
+        {
+            return slots.Any(s => s.IsOccupiedWith(vechile));
+        }
+
+        public void Exit(Vechile vechile)
+        {
+            ParkingSlot slot = slots.Single(s => s.IsOccupiedWith(vechile));
+            slot.FreeSlot();
+        }
         #endregion
 
     }

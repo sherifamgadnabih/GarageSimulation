@@ -34,6 +34,20 @@ namespace GarageSimulation
             }
 
         }
+
+        public void Exit(Vechile vechile)
+        {
+            foreach (var level in _Levels)
+            {
+                if (level.HasVechile(vechile))
+                {
+                    level.Exit(vechile);
+                    vechile.Status = ParkingStatus.NotParked;
+                    break;
+                }
+            }
+        }
+
         public void Park(Vechile vechile)
         {
             bool carParked = false;
@@ -46,6 +60,8 @@ namespace GarageSimulation
                     Console.WriteLine(string.Format("{0} {1} parked at level {2} slot {3}", vechile.Model, vechile.Type.ToString(), level.LevelNumber, slot.SlotNumber));
                     Console.WriteLine();
                     carParked = true;
+                    vechile.Status = ParkingStatus.Parked;
+                    vechile.CountDownForExit();
                     break;
                 }
             }
