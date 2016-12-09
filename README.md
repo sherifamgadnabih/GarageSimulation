@@ -1,6 +1,6 @@
 <h1> Garage Simulation </h1>
 
-<h2>Requirements<h2>
+<h2>Requirements</h2>
 - Visual Studio 2015 or Visual Studio Code with C# addon
 - .NET FrameWork 4.5.2
 
